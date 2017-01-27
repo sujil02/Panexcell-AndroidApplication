@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Panexcell</string>
+    <string name="title_activity_user_area2">List Of Programs</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="login_username">उपयोगकर्ता नाम</string>
+    <string name="login_password">पासवर्ड</string>
+    <string name="new_user_link">नया उपयोगकर्ता? यहां रजिस्टर करें!</string>
+    <string name="btLogin">लॉग इन</string>
+    <string name="ThankYou">पंजीयन हम शीघ्र ही आप के साथ संपर्क में मिल जाएगा करने के लिए धन्यवाद</string>
+    <string name="Redirect">आप स्क्रीन लॉगइन करने के लिए अब पुनः निर्देशित किया जाएगा !</string>
+    <string name="AboutUs">Panexcell Clinical Lab Private Limited is an independent CRO providing clinical research support to the pharmaceutical industry in various phases of drug development (IND, NDA and ANDA submissions).</string>
+    <string-array name="planets_array">
+        <item>Aadhaar Card</item>
+        <item>Passport</item>
+        <item>Driving License</item>
+        <item>Voting ID</item>
+    </string-array>
+</resources>
