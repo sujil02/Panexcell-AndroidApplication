@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_description"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.panexcell.DescriptionActivity">
 
-    <TextView
-        android:text="@string/Redirect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvRedirect"
-        android:textSize="20sp"
-        android:padding="@dimen/EditText_Internal_Padding"
-        android:textAlignment="center"
-        android:textColor="#f44e42"
-        android:layout_below="@+id/tvThankYou"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+    <ImageView
+        android:layout_width="match_parent"
+        app:srcCompat="@drawable/photoscreen_withname"
+        android:id="@+id/imageView2"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,12 +23,28 @@
         android:id="@+id/tvThankYou"
         android:text="@string/ThankYou"
         android:textSize="36sp"
-        android:padding="@dimen/EditText_Internal_Padding"
+        android:padding="@dimen/padding_between_elements"
         android:textAlignment="center"
         android:textColor="@color/appColor"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/imageView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_margin="@dimen/padding_between_elements" />
+
+    <TextView
+        android:text="@string/Redirect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvRedirect"
+        android:textSize="20sp"
+        android:padding="@dimen/padding_between_elements"
+        android:textAlignment="center"
+        android:textColor="#f44e42"
+        android:layout_below="@+id/tvThankYou"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="@dimen/padding_between_elements" />
 
 </RelativeLayout>

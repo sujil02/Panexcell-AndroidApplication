@@ -1,49 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_specific_program"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.panexcell.SpecificProgramActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        app:srcCompat="@drawable/photoscreen_withoutname"
+        android:id="@+id/imageView2"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/btApply">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_below="@+id/imageView2">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Study No."
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvStudyNo"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/SpecificScreen_psdding"
+                    android:textSize="@dimen/SpecificScreen_textSize"/>
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTitle"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:padding="@dimen/SpecificScreen_psdding"
+                    android:textSize="@dimen/SpecificScreen_textSize"/>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+            <TextView
+                android:text="Blood Loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvBloodLoss"
+                android:layout_gravity="center"
+                android:padding="@dimen/SpecificScreen_psdding"
+                android:textSize="@dimen/SpecificScreen_textSize"/>
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvBloodLoss1"
+                android:layout_gravity="center_vertical|center_horizontal|center"
+                android:padding="@dimen/SpecificScreen_psdding"
+                android:textSize="@dimen/SpecificScreen_textSize"/>
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvPayment"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/SpecificScreen_psdding"
+                    android:textSize="@dimen/SpecificScreen_textSize"/>
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvPayment1"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:padding="@dimen/SpecificScreen_psdding"
+                    android:textSize="@dimen/SpecificScreen_textSize"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:text="No. of periods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvPeriods"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/SpecificScreen_psdding"
+                    android:textSize="@dimen/SpecificScreen_textSize"/>
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvPeriods1"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:padding="@dimen/SpecificScreen_psdding"
+                    android:textSize="@dimen/SpecificScreen_textSize"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Stay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvStay"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/SpecificScreen_psdding"
+                    android:textSize="@dimen/SpecificScreen_textSize"/>
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvStay1"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:padding="@dimen/SpecificScreen_psdding"
+                    android:textSize="@dimen/SpecificScreen_textSize"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Amulatory Samples"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvAS"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/SpecificScreen_psdding"
+                    android:textSize="@dimen/SpecificScreen_textSize"/>
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvAS1"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:padding="@dimen/SpecificScreen_psdding"
+                    android:textSize="@dimen/SpecificScreen_textSize"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Study"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvStudy"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/SpecificScreen_psdding"
+                    android:textSize="@dimen/SpecificScreen_textSize"/>
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvStudy1"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:padding="@dimen/SpecificScreen_psdding"
+                    android:textSize="@dimen/SpecificScreen_textSize"/>
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+    <Button
+        android:text="Apply now"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btApply"
+        android:background="@color/appColor"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true">
+        android:layout_marginBottom="53dp" />
 
-        <TextView
-            android:text="Program Name here "
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvTitle"
-            android:textSize="38dp"
-            android:layout_marginBottom="20dp"
-            android:padding="@dimen/EditText_Internal_Padding"
-            android:textAlignment="center"
-            android:textColor="@color/appColor"/>
 
-        <TextView
-            android:text="program details go here"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvDescription"
-            android:textSize="20dp"/>
-
-        <Button
-            android:text="Apply now"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btApply"
-            android:layout_marginTop="70dp"
-            android:background="#E1EAEF"
-            android:textColor="#28ADAC"
-            android:textSize="18sp" />
-
-    </LinearLayout>
 </RelativeLayout>

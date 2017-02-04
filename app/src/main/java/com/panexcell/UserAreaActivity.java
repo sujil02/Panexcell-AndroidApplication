@@ -1,6 +1,7 @@
 package com.panexcell;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -31,7 +32,11 @@ public class UserAreaActivity extends AppCompatActivity
     private ListView lvPrograms;
     private ProgramListAdaptar adaptar;
     private List<Programs> programs ;
-
+    private String MY_PREFS_NAME = "USERPREF";
+    private String SESSIONCONSTANT = "IsSessionActive";
+    private  SharedPreferences.Editor editor;
+    private String SESSIONUSER = "SessionUser";
+    SharedPreferences prefs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,9 +61,9 @@ public class UserAreaActivity extends AppCompatActivity
 
                         for (int i = 0; i < recs.length(); ++i) {
                             JSONObject rec = recs.getJSONObject(i);
-                            int id = rec.getInt("id");
+                            int id = rec.getInt("_id");
                             String title = rec.getString("title");
-                            String compensation = rec.getString("compensation");
+                            String compensation = rec.getString("payment");
                             programs.add(new Programs(id,title,compensation,""));
                         }
 //                        ArrayList<String> list = new ArrayList<String>();
@@ -89,8 +94,8 @@ public class UserAreaActivity extends AppCompatActivity
 
             }
         };
-        UserDetails userDetails = new UserDetails();
-        UserAreaRequest userAreaRequest = new UserAreaRequest(userDetails.getUsername(), responseListener);
+        prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        UserAreaRequest userAreaRequest = new UserAreaRequest( prefs.getString(SESSIONUSER,null), responseListener);
         RequestQueue requestQueue = Volley.newRequestQueue(UserAreaActivity.this);
         requestQueue.add(userAreaRequest);
 
@@ -175,8 +180,11 @@ public class UserAreaActivity extends AppCompatActivity
             Intent AboutUsIntent = new Intent(UserAreaActivity.this, AboutUs.class);
             UserAreaActivity.this.startActivity(AboutUsIntent);
 
-        } else if (id == R.id.nav_manage) {
-
+        } else if (id == R.id.nav_logout) {
+            editor = getSharedPreferences(MY_PREFS_NAME,MODE_PRIVATE).edit();
+            editor.putBoolean(SESSIONCONSTANT,false);
+            editor.commit();
+            finish();
         } else if (id == R.id.nav_share) {
 
         }

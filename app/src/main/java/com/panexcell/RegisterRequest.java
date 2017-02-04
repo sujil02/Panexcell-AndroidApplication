@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class RegisterRequest extends StringRequest {
 
-    private static final String URL = "http://panexcell.binarywebworks.com:3000/signup";
+    private static final String URL = "http://panexcell1.binarywebworks.com:3001/signup";
     private Map<String, String> params;
 
     public RegisterRequest(String name, String middlename, String surname, String dob, String idtype, String idnumber,String phoneNo, String gender, Response.Listener<String> Listener){

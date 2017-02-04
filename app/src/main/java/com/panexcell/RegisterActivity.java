@@ -99,18 +99,18 @@ public class RegisterActivity extends AppCompatActivity {
                     etName.requestFocus();
 
                 }
-                else if(etMiddleName.getText().toString().length()==0){
-                    etMiddleName.setError("middle name not entered");
-                    etMiddleName.requestFocus();
-                }
-                else if(etSurname.getText().toString().length()==0){
-                    etSurname.setError("Please enter surname");
-                    etSurname.requestFocus();
-                }
-                else if(etDOB.getText().toString().length()==0){
-                        etDOB.setError("Please select DOB");
-                    etDOB.requestFocus();
-                }
+//                else if(etMiddleName.getText().toString().length()==0){
+//                    etMiddleName.setError("middle name not entered");
+//                    etMiddleName.requestFocus();
+//                }
+//                else if(etSurname.getText().toString().length()==0){
+//                    etSurname.setError("Please enter surname");
+//                    etSurname.requestFocus();
+//                }
+//                else if(etDOB.getText().toString().length()==0){
+//                        etDOB.setError("Please select DOB");
+//                    etDOB.requestFocus();
+//                }
                 else if(radioSexGroup.getCheckedRadioButtonId() == -1){
                     Toast.makeText(getApplicationContext(), "Please select gender", Toast.LENGTH_LONG).show();
                     radioSexGroup.requestFocus();

@@ -25,7 +25,7 @@ public class SpecificProgramActivity extends AppCompatActivity {
         String message = bundle.getString("message");
 
         final TextView tvTitle = (TextView) findViewById(R.id.tvTitle);
-        final TextView tvDescription = (TextView) findViewById(R.id.tvDescription);
+        final TextView tvDescription = (TextView) findViewById(R.id.tvPayment1);
         final Button btApply = (Button) findViewById(R.id.btApply);
         final Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -35,7 +35,7 @@ public class SpecificProgramActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONObject rec = jsonObject.getJSONObject("data");
                     boolean success = jsonObject.getBoolean("success");
-                    boolean applied = rec.getBoolean("applied");
+                    boolean applied = jsonObject.getBoolean("applied");
 
                     if(success){
 

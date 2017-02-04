@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class UserAreaRequest extends StringRequest {
 
-    private static final String URL = "http://panexcell.binarywebworks.com:3000/experiments";
+    private static final String URL = "http://panexcell1.binarywebworks.com:3001/experiments";
     private Map<String, String> params;
 
 

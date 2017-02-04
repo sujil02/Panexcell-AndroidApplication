@@ -8,4 +8,6 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="EditText_Internal_Padding">6dp</dimen>
     <dimen name="padding_between_elements">7dp</dimen>
+    <dimen name="SpecificScreen_psdding">7dp</dimen>
+    <dimen name="SpecificScreen_textSize">18dp</dimen>
 </resources>

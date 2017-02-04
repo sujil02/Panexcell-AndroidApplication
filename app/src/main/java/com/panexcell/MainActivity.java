@@ -1,6 +1,7 @@
 package com.panexcell;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +10,14 @@ import android.widget.Button;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+import static java.lang.Boolean.FALSE;
 
+public class MainActivity extends AppCompatActivity {
+    private String MY_PREFS_NAME = "USERPREF";
+    private String SESSIONCONSTANT = "IsSessionActive";
+    private String SESSIONLOCALE = "Locale";
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +25,20 @@ public class MainActivity extends AppCompatActivity {
 
         final Button bthindi = (Button) findViewById(R.id.btHindi);
         final Button btenglish = (Button) findViewById(R.id.btEnglish);
+        prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
 
+        if(prefs.getBoolean(SESSIONCONSTANT,FALSE))
+        {
+            Locale locale = new Locale(prefs.getString(SESSIONLOCALE,null));
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
+            Intent registerIntent = new Intent(MainActivity.this, LoginActivity.class);
+            MainActivity.this.startActivity(registerIntent);
+            finish();
+        }
         bthindi.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -31,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 config.locale = locale;
                 getBaseContext().getResources().updateConfiguration(config,
                         getBaseContext().getResources().getDisplayMetrics());
-
+                editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+                editor.putString(SESSIONLOCALE,languageToLoad);
+                editor.commit();
 
                 Intent registerIntent = new Intent(MainActivity.this, LoginActivity.class);
                 MainActivity.this.startActivity(registerIntent);
@@ -51,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
                 config.locale = locale;
                 getBaseContext().getResources().updateConfiguration(config,
                         getBaseContext().getResources().getDisplayMetrics());
+                editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+                editor.putString(SESSIONLOCALE,languageToLoad);
+                editor.commit();
                 Intent registerIntent = new Intent(MainActivity.this, LoginActivity.class);
                 MainActivity.this.startActivity(registerIntent);
                 finish();
