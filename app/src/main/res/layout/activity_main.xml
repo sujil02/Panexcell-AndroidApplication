@@ -11,28 +11,29 @@
     tools:context="com.panexcell.LoginActivity">
 
     <Button
-        android:text="Hindi"
+        android:text="@string/Hindi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E1EAEF"
-        android:textColor="#28ADAC"
+        android:textColor="@color/white"
         android:textSize="28sp"
         android:id="@+id/btHindi"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="187dp" />
+        android:layout_marginTop="187dp"
+        android:background="@drawable/round_corner_buttons" />
 
     <Button
         android:text="English"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btEnglish"
-        android:background="#E1EAEF"
-        android:textColor="#28ADAC"
         android:textSize="28sp"
+        android:textColor="@color/white"
         android:layout_marginTop="60dp"
         android:layout_below="@+id/btHindi"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/round_corner_buttons"/>
+
 </RelativeLayout>

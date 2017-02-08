@@ -12,7 +12,8 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,21 +22,26 @@
         </activity>
         <activity android:name=".RegisterActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".UserAreaActivityTemp" />
         <activity
             android:name=".UserAreaActivity"
             android:label="@string/title_activity_user_area2"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".DescriptionActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:configChanges="locale|orientation" />
+            android:configChanges="locale|orientation"
+            android:screenOrientation="portrait"/>
+
         <activity android:name=".SpecificProgramActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".AboutUs" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".AboutUs"
+            android:screenOrientation="portrait"/>
+
         <activity android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

@@ -1,183 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_register"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.panexcell.RegisterActivity"
-    android:background="@color/appColor">
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/activity_register"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="@dimen/activity_vertical_margin"
+android:paddingLeft="@dimen/activity_horizontal_margin"
+android:paddingRight="@dimen/activity_horizontal_margin"
+android:paddingTop="@dimen/activity_vertical_margin"
+tools:context="com.panexcell.RegisterActivity"
+android:background="@color/appColor">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/etName"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:hint="Name"
-        android:padding="@dimen/EditText_Internal_Padding"
-        android:background="@android:color/background_light"
-        android:paddingBottom="@dimen/padding_between_elements" />
+        android:layout_above="@+id/btRegister"
+        android:paddingBottom="@dimen/padding_between_elements" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:layout_below="@+id/etSurname"
-        android:layout_alignLeft="@+id/etSurname"
-        android:layout_alignStart="@+id/etSurname"
-        android:id="@+id/etDOB"
-        android:hint="Date Of Birth"
-        android:padding="@dimen/EditText_Internal_Padding"
-        android:layout_marginTop="@dimen/padding_between_elements"
-        android:background="@android:color/background_light" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/spIDType"
-        android:spinnerMode="dialog"
-        android:layout_below="@+id/etDOB"
-        android:padding="@dimen/EditText_Internal_Padding"
-        android:layout_marginTop="@dimen/padding_between_elements" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+                <EditText
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:inputType="textPersonName"
+                    android:id="@+id/etName"
+                    android:hint="Name"
+                    android:padding="@dimen/EditText_Internal_Padding"
+                    android:background="@android:color/background_light"
+                    android:paddingTop="@dimen/padding_between_elements"
+                    android:paddingBottom="@dimen/padding_between_elements"
+                    android:layout_span="2"/>
+            </TableRow>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:layout_below="@+id/etIDNumber"
-        android:id="@+id/etPhoneNumber"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="Phone Number"
-        android:padding="@dimen/EditText_Internal_Padding"
-        android:layout_marginTop="@dimen/padding_between_elements"
-        android:background="@android:color/background_light" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+                <EditText
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/etMiddleName"
+                    android:hint="Middle Name"
+                    android:padding="@dimen/EditText_Internal_Padding"
+                    android:background="@android:color/background_light"
+                    android:layout_marginTop="@dimen/padding_between_elements"
+                    android:layout_span="2"/>
 
-    <EditText
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:inputType="textPersonName"
-      android:ems="10"
-      android:id="@+id/etIDNumber"
-      android:hint="ID Number"
-      android:layout_below="@+id/spIDType"
-      android:layout_alignParentLeft="true"
-      android:layout_alignParentStart="true"
-      android:layout_marginTop="10dp"
-      android:layout_alignParentRight="true"
-      android:layout_alignParentEnd="true"
-      android:padding="@dimen/EditText_Internal_Padding"
-        android:background="@android:color/background_light" />
+            </TableRow>
 
-    <TextView
-        android:text="Gender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp"
-        android:id="@+id/tvGender"
-        android:paddingTop="20dp"
-        android:layout_below="@+id/etPhoneNumber"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="20sp"
-        android:textColor="#FFFFFF"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+                <EditText
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:inputType="textPersonName"
+                    android:id="@+id/etSurname"
+                    android:hint="Surname"
+                    android:padding="@dimen/EditText_Internal_Padding"
+                    android:layout_marginTop="@dimen/padding_between_elements"
+                    android:background="@android:color/background_light"
+                    android:layout_span="2"/>
+            </TableRow>
 
-    <RadioGroup
-        android:id="@+id/radioSex"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="1"
-        android:layout_alignBottom="@+id/tvGender"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-      <RadioButton
-          android:id="@+id/radioFemale"
-          android:layout_width="100dp"
-          android:layout_height="wrap_content"
-          android:layout_below="@+id/etPhoneNumber"
-          android:text="Female"
-          android:layout_weight="0.11" />
-      <RadioButton
-          android:id="@+id/radioMale"
-          android:layout_width="100dp"
-          android:layout_height="wrap_content"
-          android:layout_below="@+id/etPhoneNumber"
-          android:text="Male"
-          android:layout_weight="0.21" />
-    </RadioGroup>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:weightSum="1">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/etSurname"
-        android:hint="Surname"
-        android:padding="@dimen/EditText_Internal_Padding"
-        android:layout_below="@+id/etMiddleName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="@dimen/padding_between_elements"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="@android:color/background_light" />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:inputType="date"
+                    android:ems="10"
+                    android:id="@+id/etDOB"
+                    android:hint="Date Of Birth"
+                    android:padding="@dimen/EditText_Internal_Padding"
+                    android:layout_marginTop="@dimen/padding_between_elements"
+                    android:background="@android:color/background_light"
+                    android:elevation="2dp" />
 
-    <Button
-        android:text="Register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btRegister"
-        android:elevation="5dp"
-        android:background="#E1EAEF"
-        android:textColor="#28ADAC"
-        android:textSize="18sp"
-        android:shadowColor="#A8B8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+                <Button
+                    android:text="Select"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:id="@+id/btDatePicker"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_gravity="bottom" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1.0">
+                <Spinner
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spIDType"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:spinnerMode="dialog"
+                    android:padding="@dimen/EditText_Internal_Padding"
+                    android:layout_marginTop="@dimen/padding_between_elements"
+                    android:layout_span="2"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1.0">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/etMiddleName"
-        android:hint="Fathers Name"
-        android:padding="@dimen/EditText_Internal_Padding"
-        android:background="@android:color/background_light"
-        android:layout_below="@+id/etName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="@dimen/padding_between_elements" />
+                <EditText
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/etIDNumber"
+                    android:hint="ID Number"
+                    android:layout_marginTop="10dp"
+                    android:padding="@dimen/EditText_Internal_Padding"
+                    android:background="@android:color/background_light"
+                    android:layout_span="2"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1.0">
+                <EditText
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:ems="10"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:id="@+id/etPhoneNumber"
+                    android:hint="Phone Number"
+                    android:padding="@dimen/EditText_Internal_Padding"
+                    android:layout_marginTop="@dimen/padding_between_elements"
+                    android:background="@android:color/background_light"
+                    android:layout_span="2"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+                <EditText
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:inputType="phone"
+                    android:ems="10"
+                    android:id="@+id/etPhoneNumber2"
+                    android:hint="Alternate Phone Number"
+                    android:padding="@dimen/EditText_Internal_Padding"
+                    android:layout_marginTop="@dimen/padding_between_elements"
+                    android:background="@android:color/background_light"
+                    android:layout_span="2"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+                <EditText
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:inputType="textPersonName"
+                    android:id="@+id/etCity"
+                    android:hint="Please Enter Your City"
+                    android:padding="@dimen/EditText_Internal_Padding"
+                    android:layout_marginTop="@dimen/padding_between_elements"
+                    android:background="@android:color/background_light"
+                    android:layout_span="2"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1.0">
+                <TextView
+                    android:text="Gender"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.25"
+                    android:id="@+id/tvGender"
+                    android:paddingTop="20dp"
+                    android:layout_below="@+id/etPhoneNumber"
+                    android:textSize="20sp"
+                    android:textColor="@color/white" />
 
-    <Button
-        android:text="Select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etSurname"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/btDatePicker"
-        style="@style/Widget.AppCompat.Button.Colored" />
+                <RadioGroup
+                    android:id="@+id/radioSex"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_alignBottom="@+id/tvGender"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.75">
+
+                    <RadioButton
+                        android:id="@+id/radioFemale"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etPhoneNumber"
+                        android:text="Female"
+                        android:layout_gravity="bottom"
+                        android:padding="@dimen/nav_header_vertical_spacing"
+                        android:layout_weight="0.45" />
+
+                    <RadioButton
+                        android:id="@+id/radioMale"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etPhoneNumber"
+                        android:text="Male"
+                        android:layout_gravity="bottom"
+                        android:padding="@dimen/nav_header_vertical_spacing"
+                        android:layout_weight="0.3" />
+                </RadioGroup>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1.0"
+                android:padding="25dp">
+
+                <Button
+                    android:text="Register"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btRegister"
+                    android:background="#E1EAEF"
+                    android:textColor="#28ADAC"
+                    android:textSize="18sp"
+                    android:shadowRadius="15"
+                    android:layout_weight="0.9"
+                    android:layout_span="2"/>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
 
 </RelativeLayout>

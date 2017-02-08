@@ -13,7 +13,7 @@ import java.util.Map;
 public class SpecificProgramRequest extends StringRequest {
 
 
-        private static final String URL = "http://panexcell1.binarywebworks.com:3001/experiments/0";
+        private static final String URL = "http://panexcell1.binarywebworks.com:3001/experiment";
         private Map<String, String> params;
 
         public SpecificProgramRequest(String username, String id, Response.Listener<String> Listener){
@@ -23,7 +23,7 @@ public class SpecificProgramRequest extends StringRequest {
             //String URL = "http://panexcell.binarywebworks.com:3000/experiments/1";
             params = new HashMap<>();
             params.put("username", username);
-            params.put("id", id);
+            params.put("_id", id);
         }
 
         @Override

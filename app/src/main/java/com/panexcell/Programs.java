@@ -6,23 +6,28 @@ package com.panexcell;
 
 public class Programs {
 
-    private int id;
+    private String id;
+
+    public Programs() {
+    }
+
     private String title;
     private String date;
-    private String description;
+    private String payment;
 
-    public Programs(int id, String title, String date, String description) {
+    public Programs(String id, String title, String payment, String date) {
         this.id = id;
         this.title = title;
         this.date = date;
-        this.description = description;
+        this.payment = payment;
     }
 
-    public int getId() {
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -42,11 +47,11 @@ public class Programs {
         this.date = date;
     }
 
-    public String getDescription() {
-        return description;
+    public String getPayment() {
+        return payment;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setPayment(String payment) {
+        this.payment = payment;
     }
 }

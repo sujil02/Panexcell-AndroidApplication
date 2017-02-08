@@ -10,12 +10,13 @@ import android.widget.Button;
 
 import java.util.Locale;
 
+import static com.panexcell.Constants.MY_PREFS_NAME;
+import static com.panexcell.Constants.SESSIONCONSTANT;
+import static com.panexcell.Constants.SESSIONLOCALE;
 import static java.lang.Boolean.FALSE;
 
 public class MainActivity extends AppCompatActivity {
-    private String MY_PREFS_NAME = "USERPREF";
-    private String SESSIONCONSTANT = "IsSessionActive";
-    private String SESSIONLOCALE = "Locale";
+
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
     @Override
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             MainActivity.this.startActivity(registerIntent);
             finish();
         }
+
         bthindi.setOnClickListener(new View.OnClickListener() {
 
             @Override

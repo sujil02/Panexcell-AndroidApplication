@@ -15,7 +15,7 @@ public class RegisterRequest extends StringRequest {
     private static final String URL = "http://panexcell1.binarywebworks.com:3001/signup";
     private Map<String, String> params;
 
-    public RegisterRequest(String name, String middlename, String surname, String dob, String idtype, String idnumber,String phoneNo, String gender, Response.Listener<String> Listener){
+    public RegisterRequest(String name, String middlename, String surname, String dob, String idtype, String idnumber,String phoneNo,String phoneNo2, String gender, String city, Response.Listener<String> Listener){
         super(Method.POST, URL, Listener, null);
         params = new HashMap<>();
         params.put("name", name);
@@ -25,6 +25,8 @@ public class RegisterRequest extends StringRequest {
         params.put("idtype", idtype);
         params.put("idnumber", idnumber);
         params.put("phonenumber", phoneNo);
+        params.put("alternatePhoneNo", phoneNo2);
+        params.put("city",city);
         params.put("gender", gender);
     }
 

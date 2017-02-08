@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="appColor">#28adac</color>
+    <color name="SpecificUserAreaHostFontColor">#373737</color>
+    <color name="SpecificUserAreaUiFontColor">#8B8A87</color>
+    <color name="white">#ffffff</color>
 </resources>

@@ -42,9 +42,9 @@ public class ProgramListAdaptar extends BaseAdapter {
 
         View v = View.inflate(context, R.layout.project_list , null);
         TextView tvTittle = (TextView)v.findViewById(R.id.tvTitle);
-        TextView tvDate = (TextView)v.findViewById(R.id.tvCompensation);
+        TextView tvPayment = (TextView)v.findViewById(R.id.tvCompensation);
         tvTittle.setText(programs.get(position).getTitle());
-        tvDate.setText(programs.get(position).getDate());
+        tvPayment.setText(programs.get(position).getPayment());
         v.setTag(programs.get(position).getId());
 
         return v;

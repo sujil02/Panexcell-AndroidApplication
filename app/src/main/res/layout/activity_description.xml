@@ -9,9 +9,9 @@
 
     <ImageView
         android:layout_width="match_parent"
-        app:srcCompat="@drawable/photoscreen_withname"
+        app:srcCompat="@drawable/photoscreen_withoutname"
         android:id="@+id/imageView2"
-        android:layout_height="150dp"
+        android:layout_height="170dp"
         android:scaleType="fitXY"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"

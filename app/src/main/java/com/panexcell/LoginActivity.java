@@ -52,7 +52,8 @@ public class LoginActivity extends AppCompatActivity {
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                btLogin.setEnabled(FALSE);
+                btLogin.setClickable(FALSE);
                 loginMethod();
 
             }
@@ -72,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     boolean success = jsonObject.getBoolean("success");
 
-                    if(TRUE){
+                    if(success){
                         UserDetails userDetails = new UserDetails();
                         userDetails.setUsername(username);
                         userDetails.setPassword(password);
