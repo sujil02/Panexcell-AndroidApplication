@@ -10,5 +10,6 @@ public final class Constants {
     public static final String SESSIONUSER = "SessionUser";
     public static final String SESSIONCONSTANT = "IsSessionActive";
     public static final String SESSIONLOCALE = "Locale";
+    public static final String SESSIONUSER_PASSWORD = "password";
 
 }

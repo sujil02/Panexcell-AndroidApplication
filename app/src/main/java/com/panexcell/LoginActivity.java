@@ -17,6 +17,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import static com.panexcell.Constants.SESSIONUSER_PASSWORD;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
@@ -25,6 +26,8 @@ public class LoginActivity extends AppCompatActivity {
     private String MY_PREFS_NAME = "USERPREF";
     private String SESSIONCONSTANT = "IsSessionActive";
     private String SESSIONUSER = "SessionUser";
+    private String username,password;
+    private Button btLogin;
     private  SharedPreferences.Editor editor;
     SharedPreferences prefs;
     @Override
@@ -34,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
-        final Button btLogin = (Button) findViewById(R.id.btLogin);
+        btLogin = (Button) findViewById(R.id.btLogin);
         final TextView registerLink = (TextView) findViewById(R.id.tvRegister);
         if(prefs.getBoolean(SESSIONCONSTANT,FALSE))
         {
@@ -54,17 +57,19 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 btLogin.setEnabled(FALSE);
                 btLogin.setClickable(FALSE);
-                loginMethod();
-
+                    username = etUsername.getText().toString();
+                    password = etPassword.getText().toString();
+                    editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+                    editor.putString(SESSIONUSER, username);
+                    editor.putString(SESSIONUSER_PASSWORD, password);
+                    editor.commit();
+                    loginMethod();
             }
 
         });
     }
     public void loginMethod()
     {
-        final String username = etUsername.getText().toString();
-        final String password = etPassword.getText().toString();
-
         final Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -74,18 +79,20 @@ public class LoginActivity extends AppCompatActivity {
                     boolean success = jsonObject.getBoolean("success");
 
                     if(success){
-                        UserDetails userDetails = new UserDetails();
-                        userDetails.setUsername(username);
-                        userDetails.setPassword(password);
-                        editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
-                        editor.putBoolean(SESSIONCONSTANT,TRUE);
-                        editor.putString(SESSIONUSER,username);
-                        editor.commit();
+                        if(!prefs.getBoolean(SESSIONCONSTANT,FALSE)) {
+                            editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+                            editor.putBoolean(SESSIONCONSTANT, TRUE);
+                            editor.putString(SESSIONUSER, username);
+                            editor.putString(SESSIONUSER_PASSWORD, password);
+                            editor.commit();
+                        }
                         Intent userAreaIntent = new Intent(LoginActivity.this, UserAreaActivity.class);
                         LoginActivity.this.startActivity(userAreaIntent);
                         finish();
                     }
                     else{
+                        btLogin.setEnabled(TRUE);
+                        btLogin.setClickable(TRUE);
                         AlertDialog.Builder builder = new  AlertDialog.Builder(LoginActivity.this);
                         builder.setMessage("Sorry invaild login credentials. Please try again").setNegativeButton("retry", null).create().show();
                     }
@@ -95,8 +102,9 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         };
+        String t = prefs.getString(SESSIONUSER,null);
 
-        LoginRequest loginRequest = new LoginRequest(username, password, responseListener);
+        LoginRequest loginRequest = new LoginRequest(prefs.getString(SESSIONUSER,null), prefs.getString(SESSIONUSER_PASSWORD,null), responseListener);
         RequestQueue requestQueue = Volley.newRequestQueue(LoginActivity.this);
         requestQueue.add(loginRequest);
     }
