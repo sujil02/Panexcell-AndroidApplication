@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "81890884236",
+    "firebase_url": "https://panexcell-8ee06.firebaseio.com",
+    "project_id": "panexcell-8ee06",
+    "storage_bucket": "panexcell-8ee06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81890884236:android:333810cd59ebdab8",
+        "android_client_info": {
+          "package_name": "com.panexcell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81890884236-5rvr4kaa42bq3njrs3h2ujn3fftg232g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqp9yyvVxti-c1B_g43dLgoRToAy4zsJM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

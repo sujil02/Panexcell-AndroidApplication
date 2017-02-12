@@ -11,5 +11,6 @@ public final class Constants {
     public static final String SESSIONCONSTANT = "IsSessionActive";
     public static final String SESSIONLOCALE = "Locale";
     public static final String SESSIONUSER_PASSWORD = "password";
+    public static final String TOKEN = "REG_TOKEN";
 
 }
