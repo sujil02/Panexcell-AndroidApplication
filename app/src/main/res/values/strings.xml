@@ -31,4 +31,17 @@
     <string name="Stay">Stay</string>
     <string name="AmulatorySamples">Amulatory Samples</string>
     <string name="Study">Study</string>
+    
+    <!--register screen -->
+    <string name="Name">Name</string>
+    <string name="MiddleName">Middle Name</string>
+    <string name="Surname">Surname</string>
+    <string name="DOB">Date Of Birth</string>
+    <string name="IDNo">ID Number</string>
+    <string name="PhoneNumber">Phone Number</string>
+    <string name="AlternatePhoneNumber">Alternate Phone Number</string>
+    <string name="City">Please enter your city name</string>
+    <string name="Gender">Gender</string>
+    <string name="Male">Male</string>
+    <string name="Female">Female</string>
 </resources>

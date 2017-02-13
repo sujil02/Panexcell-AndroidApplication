@@ -166,13 +166,24 @@ public class UserAreaActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
             try {
+//                Intent i = new Intent(Intent.ACTION_SEND);
+//                final String appPackageName = getApplicationContext().getPackageName();
+//                i.setType("text/plain");
+//                i.putExtra(Intent.EXTRA_SUBJECT, "My application name");
+//                String sAux = "\nLet me recommend you this application\n\n";
+//                sAux = sAux + "https://play.google.com/store/apps/details?id=com.panexcell&hl=en \n\n";
+//                i.putExtra(Intent.EXTRA_TEXT, sAux);
+//                startActivity(Intent.createChooser(i, "choose one"));
+                int applicationNameId = getApplicationContext().getApplicationInfo().labelRes;
+                final String appPackageName = getApplicationContext().getPackageName();
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("text/plain");
-                i.putExtra(Intent.EXTRA_SUBJECT, "My application name");
-                String sAux = "\nLet me recommend you this application\n\n";
-                sAux = sAux + "https://play.google.com/store/apps/details?id=com.bhairavbullion.com&hl=en \n\n";
-                i.putExtra(Intent.EXTRA_TEXT, sAux);
-                startActivity(Intent.createChooser(i, "choose one"));
+                //i.putExtra(Intent.EXTRA_SUBJECT, activity.getString(applicationNameId));
+                String text = "Install this cool application: ";
+                String link = "https://play.google.com/store/apps/details?id=" + appPackageName;
+                i.putExtra(Intent.EXTRA_TEXT, text + " " + link);
+                startActivity(Intent.createChooser(i, "Share link:"));
+
             } catch(Exception e) {
                 //e.toString();
             }
