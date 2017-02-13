@@ -15,11 +15,12 @@ public class LoginRequest extends StringRequest {
     private static final String URL = "http://panexcell1.binarywebworks.com:3001/login";
     private Map<String, String> params;
 
-    public LoginRequest(String username, String password, Response.Listener<String> Listener){
+    public LoginRequest(String username, String password, String token, Response.Listener<String> Listener){
         super(Method.POST, URL, Listener, null);
         params = new HashMap<>();
         params.put("username", username);
         params.put("password", password);
+        params.put("token",token);
     }
 
     @Override

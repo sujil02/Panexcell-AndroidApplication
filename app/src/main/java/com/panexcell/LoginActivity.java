@@ -18,6 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import static com.panexcell.Constants.SESSIONUSER_PASSWORD;
+import static com.panexcell.Constants.TOKEN;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
@@ -104,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
         };
         String t = prefs.getString(SESSIONUSER,null);
 
-        LoginRequest loginRequest = new LoginRequest(prefs.getString(SESSIONUSER,null), prefs.getString(SESSIONUSER_PASSWORD,null), responseListener);
+        LoginRequest loginRequest = new LoginRequest(prefs.getString(SESSIONUSER,null), prefs.getString(SESSIONUSER_PASSWORD,null),prefs.getString(TOKEN,null), responseListener);
         RequestQueue requestQueue = Volley.newRequestQueue(LoginActivity.this);
         requestQueue.add(loginRequest);
     }

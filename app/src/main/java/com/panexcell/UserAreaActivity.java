@@ -170,7 +170,7 @@ public class UserAreaActivity extends AppCompatActivity
                 i.setType("text/plain");
                 i.putExtra(Intent.EXTRA_SUBJECT, "My application name");
                 String sAux = "\nLet me recommend you this application\n\n";
-                sAux = sAux + "https://play.google.com/store/apps/details?id=Orion.Soft \n\n";
+                sAux = sAux + "https://play.google.com/store/apps/details?id=com.bhairavbullion.com&hl=en \n\n";
                 i.putExtra(Intent.EXTRA_TEXT, sAux);
                 startActivity(Intent.createChooser(i, "choose one"));
             } catch(Exception e) {
