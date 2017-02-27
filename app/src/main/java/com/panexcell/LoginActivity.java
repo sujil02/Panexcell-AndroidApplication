@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString(SESSIONUSER_PASSWORD, password);
                             editor.commit();
                         }
-                        Intent userAreaIntent = new Intent(LoginActivity.this, UserAreaActivity.class);
+                        Intent userAreaIntent = new Intent(LoginActivity.this, ProgramList.class);
                         LoginActivity.this.startActivity(userAreaIntent);
                         finish();
                     }

@@ -24,6 +24,8 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -36,6 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
     static final int DIALOG_ID = 0;
     private RadioButton radioSexButton;
     EditText etName;
+    String PhoneNumber2 = null;
     private Calendar calendar;
     private TextView etDOB;
 
@@ -62,8 +65,8 @@ public class RegisterActivity extends AppCompatActivity {
         @Override
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 year_x = year;
-            month_x = month;
-            day_x = dayOfMonth +1;
+            month_x = month +1;
+            day_x = dayOfMonth ;
             Date date = new Date(year_x,month_x,day_x);
             final TextView etDOB1 = (TextView) findViewById(R.id.etDOB);
 
@@ -152,14 +155,24 @@ public class RegisterActivity extends AppCompatActivity {
                     final String Surname = etSurname.getText().toString();
                     final String DOB = etDOB.getText().toString();
                     final String IdType = spinner.getSelectedItem().toString();
-                    final String IDNumber = etIDNumber.toString();
-                    final String PhoneNumber = etPhone.toString();
-                    String PhoneNumber2 = etAlternateNumber.toString();
-                    String city = etcity.toString();
+                    final String IDNumber = etIDNumber.getText().toString();
+                    final String PhoneNumber = etPhone.getText().toString();
+                    PhoneNumber2 = etAlternateNumber.toString();
+                    String city = etcity.getText().toString();
                     int selectedId = radioSexGroup.getCheckedRadioButtonId();
                     // find the radiobutton by returned id
                     radioSexButton = (RadioButton) findViewById(selectedId);
                     final String Gender = (String) radioSexButton.getText();
+                    //String str = "02/02/1995";
+                    SimpleDateFormat df = new SimpleDateFormat("dd/mm/yyyy");
+                    Date date = null;
+                    try {
+                        date = df.parse(DOB);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    long epoch = date.getTime();
+                    //System.out.println(epoch); // 1055545912454
 
 
                     Response.Listener<String> responseListner = new Response.Listener<String>() {
@@ -193,6 +206,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 } else {
                                     AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                                     builder.setMessage("fail").setNegativeButton("retry", null).create().show();
+                                    btRegister.setEnabled(true);
+                                    btRegister.setClickable(true);
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -200,13 +215,13 @@ public class RegisterActivity extends AppCompatActivity {
 
                         }
                     };
-                    if(etAlternateNumber.toString().length() == 0 ){
-                        PhoneNumber2 = null;
+                    if(etAlternateNumber.getText().toString().length() == 0 ){
+                        PhoneNumber2 = "0";
                     }
-                    if(etcity.toString().length() == 0 ){
-                        city = null;
+                    if(etcity.getText().toString().length() == 0 ){
+                        city = "0";
                     }
-                    RegisterRequest registerRequest = new RegisterRequest(Name, MiddleName, Surname, DOB, IdType, IDNumber, PhoneNumber,PhoneNumber2, Gender,city, responseListner);
+                    RegisterRequest registerRequest = new RegisterRequest(Name, MiddleName, Surname, String.valueOf(epoch) , IdType, IDNumber, PhoneNumber,PhoneNumber2, Gender,city, responseListner);
                     RequestQueue requestQueue = Volley.newRequestQueue(RegisterActivity.this);
                     requestQueue.add(registerRequest);
                 }

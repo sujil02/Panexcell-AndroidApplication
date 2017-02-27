@@ -22,7 +22,7 @@
         <item>Driving License</item>
         <item>Voting ID</item>
     </string-array>
-    
+
     <!-- Specific user area screen-->
     <string name="StudyNo">Study No.</string>
     <string name="BloodLoss">Blood Loss</string>
@@ -31,7 +31,7 @@
     <string name="Stay">Stay</string>
     <string name="AmulatorySamples">Amulatory Samples</string>
     <string name="Study">Study</string>
-    
+
     <!--register screen -->
     <string name="Name">Name</string>
     <string name="MiddleName">Middle Name</string>
@@ -44,4 +44,6 @@
     <string name="Gender">Gender</string>
     <string name="Male">Male</string>
     <string name="Female">Female</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 </resources>

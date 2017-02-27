@@ -18,15 +18,16 @@ public class RegisterRequest extends StringRequest {
     public RegisterRequest(String name, String middlename, String surname, String dob, String idtype, String idnumber,String phoneNo,String phoneNo2, String gender, String city, Response.Listener<String> Listener){
         super(Method.POST, URL, Listener, null);
         params = new HashMap<>();
+        params.put("username", phoneNo);
         params.put("name", name);
-        params.put("fathersname", middlename);
+        params.put("middlename", middlename);
         params.put("surname", surname);
         params.put("dob", dob);
         params.put("idtype", idtype);
         params.put("idnumber", idnumber);
         params.put("phonenumber", phoneNo);
-        params.put("alternatePhoneNo", phoneNo2);
-        params.put("city",city);
+        params.put("alternatephonenumber", phoneNo2);
+        params.put("location",city);
         params.put("gender", gender);
     }
 

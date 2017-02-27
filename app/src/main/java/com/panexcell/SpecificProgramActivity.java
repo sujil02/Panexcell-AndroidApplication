@@ -18,13 +18,14 @@ import static java.lang.Boolean.FALSE;
 
 public class SpecificProgramActivity extends AppCompatActivity {
     SharedPreferences prefs;
+    String id;
     private TextView tv1,tv2,tv3,tv4,tv5,tv6,tv7,tv8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_specific_program);
         Bundle bundle = getIntent().getExtras();
-        String id = (String)bundle.getString("id");
+        id = (String)bundle.getString("id");
 
         tv1 = (TextView) findViewById(R.id.tvStudyNo1);
         tv2 = (TextView) findViewById(R.id.tvBloodLoss1);
@@ -81,9 +82,33 @@ public class SpecificProgramActivity extends AppCompatActivity {
         btApply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btApply.setEnabled(FALSE);
-                btApply.setClickable(FALSE);
-                btApply.setText("Already Applied");
+
+                final Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            //JSONObject rec = jsonObject.getJSONObject("data");
+                            boolean success = jsonObject.getBoolean("success");
+                            //boolean applied = jsonObject.getBoolean("applied");
+
+                            if(success) {
+                                btApply.setEnabled(FALSE);
+                                btApply.setClickable(FALSE);
+                                btApply.setText("Already Applied");
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                };
+                prefs = getSharedPreferences(Constants.MY_PREFS_NAME, MODE_PRIVATE);
+                AppliedRequest appliedRequest = new AppliedRequest( prefs.getString(Constants.SESSIONUSER,null),id,responseListener);
+                RequestQueue requestQueue = Volley.newRequestQueue(SpecificProgramActivity.this);
+                requestQueue.add(appliedRequest);
+
             }
         });
 
