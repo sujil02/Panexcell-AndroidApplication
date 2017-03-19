@@ -1,5 +1,6 @@
 package com.panexcell;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -54,6 +55,7 @@ public class ProgramList extends AppCompatActivity {
         mdrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mToggle = new ActionBarDrawerToggle(this, mdrawerLayout, R.string.open,R.string.close);
         mToolbar = (Toolbar) findViewById(R.id.bar);
+        mToolbar.setTitleTextColor(0xFFFFFFFF);
         setSupportActionBar(mToolbar);
         mdrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
@@ -92,6 +94,8 @@ public class ProgramList extends AppCompatActivity {
                         lvPrograms.setAdapter(adaptar);
                     }
                     else{
+                        AlertDialog.Builder builder = new AlertDialog.Builder(ProgramList.this);
+                        builder.setMessage("Please logout and re-login").setNegativeButton("retry", null).create().show();
 
                     }
                 } catch (JSONException e) {
@@ -165,7 +169,6 @@ public class ProgramList extends AppCompatActivity {
             }
         });
 
-
     }
 
     @Override
@@ -178,4 +181,6 @@ public class ProgramList extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

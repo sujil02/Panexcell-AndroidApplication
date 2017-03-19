@@ -44,14 +44,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <Button
-                android:text="Home"
+                android:text="@string/Home"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageView"
                 android:layout_marginTop="200dp"
                 android:id="@+id/btHome"
                 android:background="@color/white"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 style="?android:attr/borderlessButtonStyle"/>
             <View
                 android:layout_width="fill_parent"
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/btAboutUs"
                 android:background="@color/white"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:layout_below="@+id/view"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
@@ -89,12 +89,12 @@
                 android:layout_marginRight="30dp"
                 android:id="@+id/view2" />
             <Button
-                android:text="Share"
+                android:text="@string/Share"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btShare"
                 android:background="@color/white"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:layout_below="@+id/view2"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
@@ -112,12 +112,12 @@
                 android:layout_marginRight="30dp"
                 android:id="@+id/view3" />
             <Button
-                android:text="Logout"
+                android:text="@string/logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btLogout"
                 android:background="@color/white"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:layout_below="@+id/view3"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"

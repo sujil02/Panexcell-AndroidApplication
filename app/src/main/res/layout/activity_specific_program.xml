@@ -29,8 +29,8 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:gravity="left"
+            android:layout_gravity="start"
+            android:gravity="start"
             android:layout_below="@+id/imageView2"
             android:padding="20dp">
 
@@ -216,7 +216,7 @@
                     android:id="@+id/btApply"
                     android:textColor="@android:color/background_light"
                     android:textSize="14sp"
-                    android:background="@drawable/round_corner_buttons"
+                    android:background="@drawable/round_corner_buttons_blue"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true" />
             </TableRow>

@@ -157,7 +157,7 @@ public class RegisterActivity extends AppCompatActivity {
                     final String IdType = spinner.getSelectedItem().toString();
                     final String IDNumber = etIDNumber.getText().toString();
                     final String PhoneNumber = etPhone.getText().toString();
-                    PhoneNumber2 = etAlternateNumber.toString();
+                    PhoneNumber2 = etAlternateNumber.getText().toString();
                     String city = etcity.getText().toString();
                     int selectedId = radioSexGroup.getCheckedRadioButtonId();
                     // find the radiobutton by returned id
@@ -182,6 +182,7 @@ public class RegisterActivity extends AppCompatActivity {
                             try {
                                 JSONObject jsonObject = new JSONObject(response);
                                 boolean success = jsonObject.getBoolean("success");
+                                String responseMessage = jsonObject.getString("message");
                                 //JSONArray data = jsonObject.getJSONArray("data");
 
                                 if (success) {
@@ -205,7 +206,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     finish();
                                 } else {
                                     AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                                    builder.setMessage("fail").setNegativeButton("retry", null).create().show();
+                                    builder.setMessage(responseMessage).setNegativeButton("retry", null).create().show();
                                     btRegister.setEnabled(true);
                                     btRegister.setClickable(true);
                                 }

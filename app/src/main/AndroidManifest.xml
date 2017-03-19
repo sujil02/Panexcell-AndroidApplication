@@ -55,7 +55,9 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".ProgramList"></activity>
+        <activity android:name=".ProgramList"
+            android:label="@string/title_activity_user_area2"
+            android:screenOrientation="portrait" ></activity>
     </application>
 
 </manifest>

@@ -6,15 +6,13 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="Hindi">हिंदी</string>
     <string name="action_settings">Settings</string>
-    <string name="login_username">username</string>
-    <string name="login_password">password</string>
-    <string name="new_user_link">New User? Register Here!</string>
+    <string name="login_username">  username</string>
+    <string name="login_password">  password</string>
+    <string name="new_user_link"><u><i>New User? Register Here!</i></u> </string>
     <string name="btLogin">Login</string>
-    <string name="AboutUs">About Us</string>
     <string name="ThankYou">Thank you for registering we will get in touch with you shortly .</string>
     <string name="Redirect">You will be redirected to login screen now !</string>
     <string name="AboutUsDes">Panexcell Clinical Lab Private Limited is an independent CRO providing clinical research support to the pharmaceutical industry in various phases of drug development (IND, NDA and ANDA submissions).</string>
-
     <string name="Rs">\u20B9</string>
     <string-array name="planets_array">
         <item>Aadhaar Card</item>
@@ -46,4 +44,12 @@
     <string name="Female">Female</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    
+    <!-- menu -->
+    <string name="Home">Home</string>
+    <string name="Share">Share</string>
+    <string name="logout">Logout</string>
+    <string name="AboutUs">About Us</string>
+
+
 </resources>
